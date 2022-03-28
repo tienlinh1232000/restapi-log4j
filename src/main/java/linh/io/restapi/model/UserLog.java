@@ -9,36 +9,25 @@ import javax.persistence.*;
  *
  */
 @Entity
-@Table(name = "user")
-public class User implements Serializable {
+@Table(name = "userlog")
+public class UserLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private long id;
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "age")
     private String age;
 
-    public User() {
+    public UserLog() {
         super();
     }
 
-    public User(long id, String name, String age) {
-        this.id = id;
+    public UserLog(String name, String age) {
         this.name = name;
         this.age = age;
     }
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
